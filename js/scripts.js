@@ -6,7 +6,7 @@ const infoRate = document.querySelector('.info-rate')
 const errorMsg = document.querySelector('.error-msg')
 
 const calculate = () => {
-	const APIrequest = `http://api.nbp.pl/api/exchangerates/rates/a/${currency.value}/${date.value}`
+	const APIrequest = `https://api.nbp.pl/api/exchangerates/rates/a/${currency.value}/${date.value}`
 	fetch(APIrequest)
 		.then(res => res.json())
 		.then(data => {
