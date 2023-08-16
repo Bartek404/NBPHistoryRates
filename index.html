@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Kursy historyczne NBP</title>
+</head>
+
+<body>
+
+    <div class="app">
+        <h1 class="app__title">Kursy Historyczne NBP</h1>
+
+        <div class="app__input">
+
+            <label for="date">Data:</label>
+            <input type="date" id="date">
+
+        </div>
+
+        <div class="app__input">
+            <label for="amountOne">Kwota:</label>
+            <input type="number" id="amountOne" value="1">
+            <label for="currency">Waluta:</label>
+            <select id="currency">
+                <option value="EUR" selected>EUR - Euro</option>
+                <option value="CZK">CZK - Korony czeskie</option>
+            </select>
+        </div>
+
+        <div class="bar"></div>
+
+        <div class="app__input">
+            <label for="amountTwo">PLN:</label>
+            <input type="number" id="amountTwo" disabled>
+        </div>
+
+        <div class="app__info">
+            <p class="info-rate"></p>
+            <p class="error-msg"></p>
+        </div>
+
+
+        <script src="./js/scripts.js"></script>
+    </div>
+
+</body>
+
+</html>
