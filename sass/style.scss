@@ -5,11 +5,8 @@
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	height: 100vh;
-	background-image: linear-gradient(45deg, #445069, #252b48);
+	background-color: #252b48;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -17,9 +14,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	margin: 15px;
-	padding: 50px 20px;
+	padding: 20px;
 	background-color: #9db2bf;
 	border-radius: 8px;
 	box-shadow: 0 0 5px #9db2bf;
@@ -50,7 +47,8 @@ body {
 		input,
 		select {
 			padding: 10px;
-			width: 15em;
+			width: 200px;
+			height: 40px;
 			border: 1px solid transparent;
 			border-radius: 5px;
 			text-align: center;
@@ -59,18 +57,27 @@ body {
 			&:focus {
 				outline: none;
 				border: 1px solid #27374d;
-				background-color: #dde6ed;
 			}
 
 			&:active {
 				background-color: #f6fbff;
 			}
 		}
+
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		input[type='number'] {
+			-moz-appearance: textfield;
+		}
 	}
 
 	.app__info {
+		margin-top: 15px;
 		p {
-			margin: 15px;
 			text-align: center;
 			color: #f6fbff;
 		}
@@ -84,12 +91,17 @@ body {
 	height: 1px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
+@media (min-width: 768px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-image: linear-gradient(45deg, #445069, #252b48);
+	}
 
-input[type='number'] {
-	-moz-appearance: textfield;
+	.app {
+		padding: 50px 20px;
+		width: 600px;
+		height: 600px;
+	}
 }
