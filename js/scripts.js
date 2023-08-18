@@ -23,7 +23,7 @@ const calculate = () => {
 			console.error(`Odpowiedź serwara NBP: ${error}`)
 			if (date.value === today) {
 				infoRate.textContent = `Na tą chwilę brak danych dla dzisiejszego dnia.`
-				errorMsg.textContent = 'Spróbuj ponownie pozniej.'
+				errorMsg.textContent = 'Spróbuj ponownie później.'
 			} else {
 				checkHoliday()
 			}
