@@ -4,7 +4,7 @@ const amountTwo = document.querySelector('#amountTwo')
 const currency = document.querySelector('#currency')
 const infoRate = document.querySelector('.info-rate')
 const errorMsg = document.querySelector('.error-msg')
-
+const today = new Date().toISOString().slice(0, 10)
 date.valueAsDate = new Date()
 
 const calculate = () => {
@@ -21,7 +21,12 @@ const calculate = () => {
 			infoRate.textContent = `Brak danych.`
 			errorMsg.textContent = 'Weekend, lub nieprawidłowa data.'
 			console.error(`Odpowiedź serwara NBP: ${error}`)
-			checkHoliday()
+			if (date.value === today) {
+				infoRate.textContent = `Na tą chwilę brak danych dla dzisiejszego dnia.`
+				errorMsg.textContent = 'Spróbuj ponownie pozniej.'
+			} else {
+				checkHoliday()
+			}
 		})
 }
 
